@@ -78,7 +78,7 @@ Access the webui at `<your-ip>:7443`, for more information check out [evilginx2]
 
 ## Support Info
 
-* Shell access whilst the container is running: `docker exec -it evilginx /bin/bash`
+* Shell access whilst the container is running: `docker run -it --entrypoint sh evilginx `
 * To monitor the logs of the container in realtime: `docker logs -f evilginx`
 
 ## Building locally
