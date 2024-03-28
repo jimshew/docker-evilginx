@@ -62,7 +62,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | Parameter | Function |
 | :----: | --- |
 | `-p 10.50.50.50:80:80` | Use host's IP 10.50.50.50 and pass the port for HTTP traffic |
-| `-p 443` | Use host's IP 10.50.50.50 and pass the port for HTTPS traffic |
+| `-p 10.50.50.50:443:443` | Use host's IP 10.50.50.50 and pass the port for HTTPS traffic |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London|
 | `-v /config` | evilginx2 configs |
 | `-v /phishlets` | evilginx2 phishlets |
@@ -76,8 +76,6 @@ docker start evilginx
 ## Application Setup
 
 Access the webui at `<your-ip>:7443`, for more information check out [evilginx2](https://github.com/kgretzky/evilginx2).
-
-
 
 ## Support Info
 
