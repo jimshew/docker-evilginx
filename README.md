@@ -1,7 +1,6 @@
 # [jimshew/docker-evilginx](https://github.com/jimshew/docker-evilginx)
 
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/jimshew/docker-evilginx)
-[![CI](https://github.com/jimshew/docker-evilginx/workflows/Docker/badge.svg?event=push)](https://github.com/jimshew/docker-evilginx/actions?query=workflow%3ADocker)
 ![License](https://img.shields.io/github/license/jimshew/docker-evilginx)
 ![Commit](https://img.shields.io/github/last-commit/jimshew/docker-evilginx)
 
