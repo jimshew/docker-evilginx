@@ -87,11 +87,8 @@ If you want to make local modifications to these images for development purposes
 ```
 git clone https://github.com/jimshew/docker-evilginx.git
 cd docker-evilginx
-docker build \
-  --no-cache \
-  --pull \
-  -t jimshew/evilginx2:latest .
+docker build . -t evilginx
 ```
 ## Versions
 
-* **02.13.20:** - First Push
+* **v0.1** - Draft
