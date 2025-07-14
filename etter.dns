@@ -1,0 +1,19 @@
+####
+# DNS of captive portal login probes used in SEC660 (@jimshew)
+
+detectportal.firefox.com        A 192.168.6.69
+captive.apple.com               A 192.168.6.69
+connectivitycheck.gstatic.com   A 192.168.6.69
+clients3.google.com             A 192.168.6.69
+www.msftconnecttest.com         A 192.168.6.69
+www.msftncsi.com                A 192.168.6.69 # ActiveWebProbeHost
+nmcheck.gnome.org               A 192.168.6.69
+networkcheck.kde.org            A 192.168.6.69
+cloudflarecp.com                A 192.168.6.69
+neverssl.com                    A 192.168.6.69
+httpforever.com                 A 192.168.6.69
+ipv6.msftconnecttext.com        A 192.168.6.69 # pre Win10 build 1607
+ipv6.msftncsi.com               A 192.168.6.69 # ActriveWebProbeHostV6
+131.107.255.255                 A 192.168.6.69 # ActiveDnsProbeContent
+fd3e:4f5a:5b81::1               A 192.168.6.69 # ActiveDnsProbeContentV6
+dns.msft.mcsi.com               A 192.168.6.69 # ActiveDnsProbeHost & ActiveDnsProbeHostV6
