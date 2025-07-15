@@ -25,18 +25,23 @@ target_hosts = (
 def request(flow: http.HTTPFlow) -> None:
   logging.warning("*************Request for " + flow.request.url)
   if (flow.request.headers["Host"] in target_hosts):
-    logging.warning("***********Hijacking " + flow.request.url)
+    # I think we should never be here unless an IP address is used instead of hostname
+    logging.warning("***********Hijacking (in request logic)" + flow.request.url)
     headers = [
         (b'Location',redirect_to) 
     ]
-    flow.response = http.Response.make(307, b'ABAB', headers)
+    flow.response = http.HTTPResponse.make(307, b'ABAB', headers)
   else:
     logging.warning("***********Skipping " + flow.request.url)
 
-
 def response(flow: http.HTTPFlow) -> None:
   headers = [
-    (b'Location',redirect_to) 
+    (b'Server',b'fake-cp'),
+    (b'Content-Type',b'text/html'),
+    (b'Expires',b'0'),
+    (b'Cache-Control',b'no-cache, no0store, must-revalidate'),
+    (b'Pragma',b'no-cache'),
+    (b'Location',redirect_to)
   ]
-  flow.response = http.Response.make(301, b'ZZZZ', headers)
+  flow.response = http.HTTPResponse.make(302, b'0', headers)
 
